@@ -20,8 +20,7 @@ public class Huerto {
     @Embedded
     private Tamanio tamanio;
 
-    public Huerto() {
-    }
+    public Huerto() {}
 
     public Huerto(String cultivo, String localizacion, Persona persona, Tamanio tamanio) {
         this.cultivo = cultivo;
@@ -30,49 +29,24 @@ public class Huerto {
         this.tamanio = tamanio;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public String getCultivo() {
-        return cultivo;
-    }
-
-    public void setCultivo(String cultivo) {
-        this.cultivo = cultivo;
-    }
-
-    public String getLocalizacion() {
-        return localizacion;
-    }
-
-    public void setLocalizacion(String localizacion) {
-        this.localizacion = localizacion;
-    }
-
-    public Persona getPersona() {
-        return persona;
-    }
-
-    public void setPersona(Persona persona) {
-        this.persona = persona;
-    }
-
-    public Tamanio getTamanio() {
-        return tamanio;
-    }
-
-    public void setTamanio(Tamanio tamanio) {
-        this.tamanio = tamanio;
-    }
+    public Long getId() { return id; }
+    public String getCultivo() { return cultivo; }
+    public void setCultivo(String cultivo) { this.cultivo = cultivo; }
+    public String getLocalizacion() { return localizacion; }
+    public void setLocalizacion(String localizacion) { this.localizacion = localizacion; }
+    public Persona getPersona() { return persona; }
+    public void setPersona(Persona persona) { this.persona = persona; }
+    public Tamanio getTamanio() { return tamanio; }
+    public void setTamanio(Tamanio tamanio) { this.tamanio = tamanio; }
 
     @Override
     public String toString() {
         return "Huerto{" +
                 "id=" + id +
                 ", cultivo='" + cultivo + '\'' +
-                ", localizacion='" + localizacion + '\'' +
-                ", tamanio=" + tamanio +
+                ", loc='" + localizacion + '\'' +
+                ", tamaño=" + tamanio +
+                ", dueño=" + (persona != null ? persona.getNombre() : "Nulo") +
                 '}';
     }
 }
