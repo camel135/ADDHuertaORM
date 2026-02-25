@@ -11,21 +11,22 @@ public class Labor {
     private Long id;
 
     private String descripcion;
+
+    @Column(name = "fecha_limite")
     private String fechaLimite;
 
     @ManyToOne
     @JoinColumn(name = "huerto_id")
     private Huerto huerto;
 
-    public Labor() {}
+    public Labor() {
+    }
 
     public Labor(String descripcion, String fechaLimite, Huerto huerto) {
         this.descripcion = descripcion;
         this.fechaLimite = fechaLimite;
         this.huerto = huerto;
     }
-
-    // GETTERS Y SETTERS
 
     public Long getId() {
         return id;

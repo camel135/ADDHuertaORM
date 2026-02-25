@@ -1,6 +1,5 @@
 package com.example.ADDHuerta.dominio;
 
-import com.example.ADDHuerta.dominio.Persona;
 import jakarta.persistence.*;
 
 @Entity
@@ -18,19 +17,18 @@ public class Huerto {
     @JoinColumn(name = "persona_id")
     private Persona persona;
 
-    @Enumerated(EnumType.STRING)
+    @Embedded
     private Tamanio tamanio;
 
-    public Huerto() {}
+    public Huerto() {
+    }
 
-    public Huerto(String cultivo, String localizacion, Persona persona,Tamanio tamanio) {
+    public Huerto(String cultivo, String localizacion, Persona persona, Tamanio tamanio) {
         this.cultivo = cultivo;
         this.localizacion = localizacion;
         this.persona = persona;
         this.tamanio = tamanio;
     }
-
-    // GETTERS Y SETTERS
 
     public Long getId() {
         return id;
@@ -60,12 +58,21 @@ public class Huerto {
         this.persona = persona;
     }
 
+    public Tamanio getTamanio() {
+        return tamanio;
+    }
+
+    public void setTamanio(Tamanio tamanio) {
+        this.tamanio = tamanio;
+    }
+
     @Override
     public String toString() {
         return "Huerto{" +
                 "id=" + id +
                 ", cultivo='" + cultivo + '\'' +
                 ", localizacion='" + localizacion + '\'' +
+                ", tamanio=" + tamanio +
                 '}';
     }
 }
