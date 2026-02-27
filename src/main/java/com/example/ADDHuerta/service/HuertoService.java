@@ -20,16 +20,16 @@ public class HuertoService {
     }
 
     public Huerto crearHuerto(String cultivo, String localizacion, Tamanio tamanio, Long idPersona) {
-        // Lógica 1: Existe la persona
+        // Existe la persona
         Persona persona = personaRepo.findById(idPersona)
                 .orElseThrow(() -> new RuntimeException("Persona no existe"));
 
-        // Lógica 2: Cultivo no vacío
+        // Cultivo no vacío
         if (cultivo == null || cultivo.isBlank()) {
             throw new RuntimeException("El cultivo no puede estar vacío");
         }
 
-        // Lógica 3: Tamaño positivo (Nueva para la rúbrica)
+        // Tamaño positivo (Nueva para la rúbrica)
         if (tamanio == null || tamanio.getValor() <= 0) {
             throw new RuntimeException("El tamaño debe ser mayor que cero");
         }

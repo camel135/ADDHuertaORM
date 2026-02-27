@@ -17,7 +17,7 @@ public class LaborService {
         this.huertoRepo = huertoRepo;
     }
 
-    // Lógica 3 → no crear labor si el huerto no existe
+    // no crear labor si el huerto no existe
     public Labor crearLabor(String descripcion, String fecha, Long idHuerto) {
 
         Huerto huerto = huertoRepo.findById(idHuerto)

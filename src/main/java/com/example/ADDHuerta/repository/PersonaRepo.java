@@ -12,4 +12,6 @@ public interface PersonaRepo extends JpaRepository<Persona, Long> {
     // Consulta derivada
     List<Persona> findByApellidoContaining(String texto);
 
+    // consulta defensa
+
 }

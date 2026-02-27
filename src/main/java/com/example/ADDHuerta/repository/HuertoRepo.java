@@ -42,4 +42,7 @@ public interface HuertoRepo extends JpaRepository<Huerto, Long> {
     @Modifying
     @Transactional
     void limpiarHuertosHuerfanos();
+
+    // consulta defensa:
+
 }

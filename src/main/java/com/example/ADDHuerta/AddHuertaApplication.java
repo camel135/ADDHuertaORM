@@ -30,7 +30,7 @@ public class AddHuertaApplication {
 			Tamanio t = new Tamanio(120, "m2");
 			Huerto h = huertoService.crearHuerto("Tomates", "Valencia", t, p.getId());
 
-			// Uso de SETTER para demostrar funcionalidad (Ya no estará en gris)
+			// Uso de SETTER para demostrar funcionalidad
 			h.setLocalizacion("Valencia Norte");
 			huertoService.crearHuerto(h.getCultivo(), h.getLocalizacion(), h.getTamanio(), p.getId());
 

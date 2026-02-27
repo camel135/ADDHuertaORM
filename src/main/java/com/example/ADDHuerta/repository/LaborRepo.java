@@ -17,4 +17,7 @@ public interface LaborRepo extends JpaRepository<Labor, Long> {
     // Nativa
     @Query(value = "SELECT * FROM labores WHERE fecha_limite = ?1", nativeQuery = true)
     List<Labor> buscarPorFechaNativa(String fecha);
+
+    // consulkta defensa:
+
 }
