@@ -11,7 +11,7 @@ import java.util.List;
 
 public interface HuertoRepo extends JpaRepository<Huerto, Long> {
 
-    // 1. CONSULTAS DERIVADAS (3)
+    // 1. CONSULTAS DERIVADAS
 
     List<Huerto> findByCultivoContaining(String p);
 
@@ -19,7 +19,7 @@ public interface HuertoRepo extends JpaRepository<Huerto, Long> {
 
     long countByCultivo(String c);
 
-    // 2. CONSULTAS JPQL con @Query (3)
+    // 2. CONSULTAS JPQL con @Query
 
     @Query("SELECT h FROM Huerto h WHERE h.tamanio.valor > :valor")
     List<Huerto> buscarHuertosGrandes(@Param("valor") float valor);
@@ -30,7 +30,7 @@ public interface HuertoRepo extends JpaRepository<Huerto, Long> {
     @Query("SELECT COUNT(h) FROM Huerto h WHERE h.localizacion = :loc")
     long totalEnCiudad(@Param("loc") String loc);
 
-    // 3. CONSULTAS NATIVAS (3)
+    // 3. CONSULTAS NATIVAS
 
     @Query(value = "SELECT * FROM huertos WHERE cultivo = ?1 LIMIT 1", nativeQuery = true)
     Huerto elPrimeroDeEseCultivo(String c);
